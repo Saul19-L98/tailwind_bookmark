@@ -1,3 +1,111 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* rubik-regular - latin */
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/rubik-v21-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('./assets/fonts/rubik-v21-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./assets/fonts/rubik-v21-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./assets/fonts/rubik-v21-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('./assets/fonts/rubik-v21-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+/* rubik-600 - latin */
+@font-face {
+font-family: 'Rubik';
+font-style: normal;
+font-weight: 600;
+src: url('./assets/fonts/rubik-v21-latin-600.eot'); /* IE9 Compat Modes */
+src: local(''),
+        url('./assets/fonts/rubik-v21-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('./assets/fonts/rubik-v21-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+        url('./assets/fonts/rubik-v21-latin-600.woff') format('woff'), /* Modern Browsers */
+        url('./assets/fonts/rubik-v21-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+/* rubik-700 - latin */
+@font-face {
+font-family: 'Rubik';
+font-style: normal;
+font-weight: 700;
+src: url('./assets/fonts/rubik-v21-latin-700.eot'); /* IE9 Compat Modes */
+src: local(''),
+        url('./assets/fonts/rubik-v21-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('./assets/fonts/rubik-v21-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+        url('./assets/fonts/rubik-v21-latin-700.woff') format('woff'), /* Modern Browsers */
+        url('./assets/fonts/rubik-v21-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+@media screen(lg) {
+        .bg-hero{
+                width: 2000px;
+                height: 300px;
+                left: 30%;
+                @apply absolute rounded-l-full top-52 bg-softBlue;
+        }
+        .bg-tabs{
+                width: 2000px;
+                height: 300px;
+                right: 60%;
+                @apply absolute rounded-r-full top-60 bg-softBlue;
+        }  
+}
+
+.ficon:hover{
+        filter: invert(80%) sepia(37%) saturate(7048%) hue-rotate(132deg) brightness(105%);
+} 
+
+/* Hamburger Menu */
+.hamburger{
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        transition: all 0.25s;
+        position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom{
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 3px;
+        top:0;
+        left:0;
+        background: #000;
+        transform: rotate(0);
+        transition: all 0.5s;
+}
+
+.hamburger-middle{
+        transform: translateY(7px);
+}
+
+.hamburger-bottom{
+        transform: translateY(14px);
+}
+
+.open{
+        transform: rotate(90deg);
+        position: fixed;
+        top:50px;
+        right: 25px;
+}
+
+.open .hamburger-top{
+        transform: rotate(45deg) translate(6px,6px);
+        background-color: #fff;
+}
+
+.open .hamburger-middle{
+        display: none;
+}
+
+.open .hamburger-bottom{
+        transform: rotate(135deg) translate(6px, -6px);
+        background-color: #fff;
+}

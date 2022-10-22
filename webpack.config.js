@@ -6,7 +6,7 @@ module.exports = {
 	entry: './src/index.js',
 	output: {
 		path: path.resolve(__dirname,'dist'),
-		filename:'bundle.js',
+		filename:'[hash].js',
 	},
 	devServer: {
 		watchFiles: ["src/**/*"],
@@ -29,6 +29,13 @@ module.exports = {
 				generator:{
 					filename:"assets/img/[hash][ext]"
 				}
+			},
+			{
+				test:/\.(eot|ttf|woff|woff2)$/i,
+				type:"asset/resource",
+				generator:{
+					filename:"assets/fonts/[hash][ext]"
+				}
 			}
 		],
 	},
@@ -37,6 +44,7 @@ module.exports = {
 			inject: true,
 			template: './public/index.html',
 			filename: './index.html',
+			minify: true,
 		})
-	]
+	],
 }
